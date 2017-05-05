@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <!-- DTM training DTM -->
+  <title>Extra</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="css/style3.css" type="text/css" media="all" />
+
+
+  <script>
+    dataLayer = [];
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TCLRJ3M');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery.jcarousel.pack.js"></script>
+  <script type="text/javascript" src="js/funcEventPractice.js"></script>
+
+</head>
+
+<!--
+
+<body spellcheck="false">
+  <div id="content">
+    <div id="clickCounter" class="socials right">
+      <p>0</p>
+    </div>
+    <div id="main">
+      <iframe id="frmFile" src="troops.txt" onload="LoadOriginalFile();" style="display: none;"></iframe>
+      <input type="text" name="txt-input" id="txt-input" size="25" placeholder="Unit ID or Name:">
+      <div id="results"></div>
+      <div id="additional_testing">
+        <pre contenteditable id="style-text">text one</pre>
+        <pre id="work-text">
+          <div class = "text">
+            text two
+          </div>
+        <div class = "md">
+          Typing an essay here to see what goes on in terms of content formatting.
+        </div>
+      </pre>
+
+      </div>
+
+    </div>
+    <div id="secondary">
+      <pre id="other-text">
+        <input type="file" id="input-file">
+        <button id="read-file">Read File</button>
+    </pre>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+-->
+
+<body spellcheck="false">
+  <header>
+    <div id="clickCounter">
+      <p> 0 </p>
+    </div>
+  </header>
+
+
+  <div id="menu_bar">
+    <div id="new_file_container" , class="container">
+      <div id="select_new_file">
+        <input type="file" id="input-file">
+      </div>
+      <div id="accept_new_file">
+        <button id="read-file">Read File</button>
+      </div>
+    </div>
+
+
+  </div>
+  <main>
+    <iframe id="frmFile" src="troops.txt" onload="LoadOriginalFile();" style="display: none;"></iframe>
+    <div id="central">
+      <div id="results_container" class="container" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)">
+        <div class="horizontal_parent">
+          <div id="prev">
+            <button id="prev_unit">Prev</button>
+          </div>
+          <div id="user_input">
+            <input type="text" name="txt-input" id="txt-input" size="25" placeholder="Unit ID or Name:">
+          </div>
+          <div id="next">
+            <button id="next_unit">Next</button>
+          </div>
+        </div>
+        <div class="horizontal_parent">
+          <div id="results_title">
+            <p> results title </p>
+
+          </div>
+          <div id="upgrade_1">
+            <button id="upgrade1_bttn">Upgrade1</button>
+          </div>
+          <div id="upgrade_2">
+            <button id="upgrade2_bttn">Upgrade2</button>
+          </div>
+        </div>
+        <div class="horizontal_parent">
+          <div id="results_left">
+            <p> results left </p>
+          </div>
+          <div id="results_right">
+            <p> results right </p>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div id="unused_area" , class="container">
+        <p> unused area </p>
+      </div>
+-->
+      <div id="unused_area" class="troop_menu" dragable="true">
+      </div>
+      <div id="items_container" class="container">
+        <div id="items_title">
+          <p> items title </p>
+        </div>
+        <textarea id="items_list" rows="3" cols="82"></textarea>
+        <div id="items_array">
+        </div>
+      </div>
+    </div>
+
+    <img id="picture" src="css/images/soc-rss.gif" alt="icon_to_drag" draggable="true" ondragstart="drag(event)">
+  </main>
+
+  <div id="troops_menu">
+    <div class="troop" draggable="true">
+      <header>1</header>
+    </div>
+    <div class="troop" draggable="true">
+      <header>2</header>
+    </div>
+    <div class="troop" draggable="true">
+      <header>3</header>
+    </div>
+  </div>
+
+</body>
