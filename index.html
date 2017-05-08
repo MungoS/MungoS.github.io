@@ -26,6 +26,22 @@
 
   <div id="menu_bar">
     <div id="new_file_container" , class="container">
+      <select id="file_dropdown">
+        <option value="troops.txt">Vanilla</option>
+        <option value="troops_pop.txt">PoP</option>
+        <option value="temp.txt">temp</option>
+        <option value="text3">text3</option>
+        <option value="text4">text4</option>
+      </select>
+      <script type="text/javascript">
+        var mydropdown = document.getElementById('file_dropdown');
+        mydropdown.onchange = function () {
+          //mytextbox.value = mytextbox.value  + this.value; //to appened
+          //mytextbox.innerHTML = this.value;
+          fileChange(this.value);
+          //testCall("demo");
+        }
+      </script>
       <div id="select_new_file">
         <input type="file" id="input-file">
       </div>

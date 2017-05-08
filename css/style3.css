@@ -81,8 +81,8 @@ div {
   background: green;
 }
 
-#unused_area {
-  height: 200px;
+#troop_menu_area {
+  max-height: 200px;
   width: 40%;
   border: none;
   float: right;

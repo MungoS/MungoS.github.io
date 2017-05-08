@@ -295,6 +295,8 @@ function loadTroopMenu() { //http://stackoverflow.com/questions/18789354/how-do-
     for (var key in myTroopList) {
         menuTextArea.innerHTML += "<a href=\"#\">" + myTroopList[key].getName() + "</a>";
     }*/
+     document.getElementById('troop_menu_area').innerHTML = '';
+
     for (var key in myTroopList) {
         var div = document.createElement('div');
         //div.innerHTML = "<a draggable=\"true\" ondragstart=\"drag(event)\">" + myTroopList[key].getName() + "</a>";
@@ -309,7 +311,7 @@ function loadTroopMenu() { //http://stackoverflow.com/questions/18789354/how-do-
         div.addEventListener('dragstart', function () { drag(event) }, false);
         //div.ondragstart = "drag(event)"; - does not work as dynamic element is not on DOM. thus require addEventListener.
         //div.ondrag = "drag(event)"; - only safari and internet explorer
-        document.getElementById("unused_area").appendChild(div);
+        document.getElementById("troop_menu_area").appendChild(div);
     }
 }
 
@@ -325,4 +327,57 @@ function loadTroopItems(id) { //need to somehow delete previous items on new loa
         div.addEventListener('dragstart', function () { drag(event) }, false);
         document.getElementById("items_array").appendChild(div);
     }
+}
+
+function testCall(x) {
+    alert("Tested with: " + x);
+}
+
+function fileChange(fileName) {
+    /* $.get("temp.txt", function (response) { //get is asynchronous, so can have seperate 'get' for items at same time. Make sure I don't try load item stats before troops are finished and vice-versa
+         alert("results: " + response);
+     });*/
+    loadNewFile(fileName);
+}
+
+function loadNewFile(fileName) {
+
+    myTroopList = []; //reset troop list
+    totalTroops = 0;
+    totalTroopsCheck = 0;
+    $.get(fileName, function (strRawContents) {
+        while (strRawContents.indexOf("\r") >= 0) {
+            strRawContents = strRawContents.replace("\r", "");
+        }
+        var arrLines = strRawContents.split("\n");
+        this.textDocumentName = arrLines[0];
+        totalTroops = arrLines[1];
+        var curID = 1;
+        var lineNumber = 1;
+        for (var i = 2; i < arrLines.length; i++) {
+            var line = arrLines[i];
+            if (lineNumber == 1) {
+                var line1 = line;
+            } else if (lineNumber == 2) {
+                var line2 = line;
+            } else if (lineNumber == 3) {
+                var line3 = line;
+            } else if (lineNumber == 4) {
+                var line4 = line;
+            } else if (lineNumber == 5) {
+                var line5 = line;
+            } else if (lineNumber == 6) {
+                var line6 = line;
+            }
+            lineNumber += 1;
+
+
+            if (lineNumber == 7) {
+                myTroopList[curID] = new Troop(curID, line1, line2, line3, line4, line5, line6);
+                curID += 1;
+                lineNumber = 0;
+            }
+        }
+        loadTroopMenu();
+    });
 }
